@@ -1,13 +1,16 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['-c', 'printenv'] # This will print all environment variables
   - name: 'alpine'
-    entrypoint: 'sh'
+    entrypoint: 'bash'
     args:
       - '-c'
       - |
         echo "Cloud repo build started..."
-        echo "Repo name: $(REPO_NAME)"
-        echo "Commit SHA: $(COMMIT_SHA)"
-        echo "Branch name: $(BRANCH_NAME)"
+        echo "Repo name: $REPO_NAME"
+        echo "Commit SHA: $COMMIT_SHA"
+        echo "Branch name: $BRANCH_NAME"
         echo "Cloud repo build completed."
 
 options:
