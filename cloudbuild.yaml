@@ -1,0 +1,14 @@
+steps:
+  - name: 'alpine'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo "Cloud repo build started..."
+        echo "Repo name: $(REPO_NAME)"
+        echo "Commit SHA: $(COMMIT_SHA)"
+        echo "Branch name: $(BRANCH_NAME)"
+        echo "Cloud repo build completed."
+
+options:
+  logging: CLOUD_LOGGING_ONLY
