@@ -3,7 +3,7 @@ steps:
     entrypoint: 'bash'
     args: ['-c', 'printenv'] # This will print all environment variables
   - name: 'alpine'
-    entrypoint: 'bash'
+    entrypoint: 'sh'
     args:
       - '-c'
       - |
