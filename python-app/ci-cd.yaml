@@ -1,5 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
+    dir: 'python-app'
     args:
       ['build', '-t', 'us-central1-docker.pkg.dev/arcane-bit-485301-f1/python-app-image/app-image:v1', '.']
   - name: 'gcr.io/cloud-builders/docker'
