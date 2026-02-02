@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    dir: 'python-app'
+    args:
+      ['build', '-t', 'us-central1-docker.pkg.dev/arcane-bit-485301-f1/python-app-image/app-image:v2', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'us-central1-docker.pkg.dev/arcane-bit-485301-f1/python-app-image/app-image:v2']
+
+images:
+  - 'us-central1-docker.pkg.dev/arcane-bit-485301-f1/python-app-image/app-image:v2'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
