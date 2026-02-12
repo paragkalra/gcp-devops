@@ -28,4 +28,4 @@ steps:
         echo "_CUSTOM_VARIABLE: $_CUSTOM_VARIABLE"     echo "_CUSTOM_VARIABLE: $_CUSTOM_VARIABLE"
 
 options:
-  logging: "CLOUD_LOGGING"
+  logging: "CLOUD_LOGGING_ONLY"
