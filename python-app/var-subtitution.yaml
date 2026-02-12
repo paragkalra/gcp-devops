@@ -1,0 +1,31 @@
+
+substitutions:
+  _ENV: "staging"
+  _SERVING_NAME: "demo-service"
+  _CUSTOM_VARIABLE: "Hello, World!"
+
+steps:
+  - name: "ubuntu"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        echo "==== Built-in Variables ====="
+        echo "PrOJECT_ID: $PROJECT_ID"
+        echo "REPO_NAME: $REPO_NAME"
+        echo "REVISION_ID: $REVISION_ID"
+        echo "BRANCH_NAME: $BRANCH_NAME"
+        echo "TAG_NAME: $TAG_NAME"
+        echo "COMMIT_SHA: $COMMIT_SHA"
+  - name: "ubuntu"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        echo "==== Custom Substitutions ====="
+        echo "_ENV: $_ENV"
+        echo "_SERVING_NAME: $_SERVING_NAME"
+        echo "_CUSTOM_VARIABLE: $_CUSTOM_VARIABLE"     echo "_CUSTOM_VARIABLE: $_CUSTOM_VARIABLE"
+
+options:
+  logging: "CLOUD_LOGGING"
